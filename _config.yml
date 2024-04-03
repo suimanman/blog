@@ -4,8 +4,8 @@
 
 # Site
 title: suiman
-subtitle: ''
-description: '岁漫的个人博客 '
+subtitle: '岁漫漫'
+description: '岁漫的个人博客'
 keywords:
 author: suiman
 language: zh-CN
@@ -145,3 +145,29 @@ githubEmojis:
   inject: true
   styles:
   customEmojis:
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+# 是否在首页显示音乐
+music:
+  enable: true
+  title:     	    # 非吸底模式有效
+    enable: true
+    show: 听听音乐
+  server: netease   # require music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    # require song, playlist, album, search, artist
+  id: 2204474942     # require song id / playlist id / album id / search keyword
+  fixed: false      # 开启吸底模式
+  autoplay: true   # 是否自动播放
+  theme: '#42b983'
+  loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'list'   # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: true  # 列表默认折叠
