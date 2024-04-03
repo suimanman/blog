@@ -103,7 +103,9 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:suimanman/blog.git
+  branch: main
 
 menu:
   Index:
