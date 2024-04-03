@@ -45,12 +45,14 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
+  enable:false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
+  enable:true
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -102,3 +104,42 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+menu:
+  Index:
+    url: /
+    icon: fas fa-home
+  Tags:
+    url: /tags
+    icon: fas fa-tags
+  Categories:
+    url: /categories
+    icon: fas fa-bookmark
+  Archives:
+    url: /archives
+    icon: fas fa-archive
+  About:
+    url: /about
+    icon: fas fa-user-circle
+  Friends:
+    url: /friends
+    icon: fas fa-address-book
+search:
+  path: search.xml
+  field: post
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+postInfo:
+  date: true
+  update: false
+  wordCount: false # 设置文章字数统计为 true.
+  totalCount: false # 设置站点文章总字数统计为 true.
+  min2read: false # 阅读时长.
+  readCount: false # 阅读次数.
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
