@@ -1,6 +1,21 @@
 ---
-title: SpringBoot
-
+​---
+title: SpringCloud
+date: 2024-02-14 09:25:00
+author: 岁漫
+img: /source/images/7.jpg
+top: true
+hide: false
+cover: true
+coverImg: /images/7.jpg
+toc: false
+mathjax: false
+summary: Eureka、LoadBalancer、GateWay
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+​---
 ---
 
 # Eureka

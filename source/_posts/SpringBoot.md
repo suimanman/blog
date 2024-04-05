@@ -1,5 +1,21 @@
 ---
+​---
 title: SpringBoot
+date: 2024-02-13 09:25:00
+author: 岁漫
+img: /source/images/6.jpg
+top: true
+hide: false
+cover: true
+coverImg: /images/6.jpg
+toc: false
+mathjax: false
+summary: 自定义运行器、配置文件、多环境配置、常用框架、接口文档生成
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+​---
 ---
 
 # 自定义运行器

@@ -1,6 +1,21 @@
 ---
+ ---
 title: SpringSecurity
-
+date: 2024-02-16 09:25:00
+author: 岁漫
+img: /source/images/9.jpg
+top: true
+hide: false
+cover: true
+coverImg: /images/9.jpg
+toc: false
+mathjax: false
+summary: 环境配置、认证、授权、记住我
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+​---
 ---
 
 # 环境配置

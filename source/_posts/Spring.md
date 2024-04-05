@@ -1,6 +1,21 @@
 ---
+​---
 title: Spring
-
+date: 2024-02-12 09:25:00
+author: 岁漫
+img: /source/images/5.jpg
+top: true
+hide: false
+cover: true
+coverImg: /images/5.jpg
+toc: false
+mathjax: false
+summary: IoC容器、Bean、Spring高级特性、AOP
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+​---
 ---
 
 # IoC容器基础
