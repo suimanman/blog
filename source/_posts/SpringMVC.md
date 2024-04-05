@@ -1,5 +1,4 @@
 ---
-​---
 title: SpringMVC
 date: 2024-02-15 09:25:00
 author: 岁漫
@@ -15,7 +14,6 @@ categories: Markdown
 tags:
   - Typora
   - Markdown
-​---
 ---
 
 # 重定向

@@ -1,5 +1,4 @@
 ---
-​---
 title: Spring
 date: 2024-02-12 09:25:00
 author: 岁漫
@@ -15,7 +14,6 @@ categories: Markdown
 tags:
   - Typora
   - Markdown
-​---
 ---
 
 # IoC容器基础
