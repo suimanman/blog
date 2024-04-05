@@ -2,7 +2,7 @@
 title: javaweb
 date: 2024-02-10 09:25:00
 author: 岁漫
-img: /source/images/4.jpg
+img: /images/4.jpg
 top: true
 hide: false
 cover: true

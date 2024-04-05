@@ -2,7 +2,7 @@
 title: 深入SpringBoot数据交互
 date: 2024-02-08 09:25:00
 author: 岁漫
-img: /source/images/2.jpg
+img: /images/2.jpg
 top: true
 hide: false
 cover: true
