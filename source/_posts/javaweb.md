@@ -2,18 +2,18 @@
 title: javaweb
 date: 2024-02-10 09:25:00
 author: 岁漫
-img: /source/images/3.jpg
+img: /source/images/4.jpg
 top: true
 hide: false
 cover: true
-coverImg: /images/3.jpg
+coverImg: /images/4.jpg
 toc: false
 mathjax: false
 summary: Lombok、Mybatis、JUnit单元测试、Maven管理
 categories: Markdown
 tags:
-  - Typora
-  - Markdown
+  - java后端
+  - javaweb
 ---
 
 # Lombok

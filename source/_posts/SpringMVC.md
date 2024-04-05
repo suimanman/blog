@@ -2,18 +2,18 @@
 title: SpringMVC
 date: 2024-02-15 09:25:00
 author: 岁漫
-img: /source/images/8.jpg
+img: /source/images/1.jpg
 top: true
 hide: false
 cover: true
-coverImg: /images/8.jpg
+coverImg: /images/1.jpg
 toc: false
 mathjax: false
 summary: 重定向、请求转发、RestFul、拦截器、JSON数据格式与Axios请求
 categories: Markdown
 tags:
-  - Typora
-  - Markdown
+  - java后端
+  - SpringMVC
 ---
 
 # 重定向

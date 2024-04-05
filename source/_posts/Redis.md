@@ -2,18 +2,18 @@
 title: Redis
 date: 2024-02-11 09:25:00
 author: 岁漫
-img: /source/images/4.jpg
+img: /source/images/1.jpg
 top: true
 hide: false
 cover: true
-coverImg: /images/4.jpg
+coverImg: /images/1.jpg
 toc: false
 mathjax: false
 summary: NoSQL、Redis安装和部署、基本操作
 categories: Markdown
 tags:
-  - Typora
-  - Markdown
+  - java后端
+  - Redis
 ---
 
 
