@@ -253,7 +253,9 @@ Target: dependency_files
 
 第二行需要tab开头，然后写生成上述文件所要执行的命令。
 
-![截屏2024-04-07 11.09.09](/Users/wangmeice/github_imgs/截屏2024-04-07 11.09.09.png)
+![](https://raw.githubusercontent.com/suimanman/imgs/main/%E6%88%AA%E5%B1%8F2024-04-07%2011.09.09.png)
+
+
 
 ---
 
