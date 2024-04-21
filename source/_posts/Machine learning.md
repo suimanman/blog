@@ -2,11 +2,11 @@
 title: Machine learning
 date: 2024-04-21 10:00:00
 author: 岁漫
-img: /images/ml
+img: /images/ml.png
 top: true
 hide: false
 cover: true
-coverImg: /images/ml
+coverImg: /images/ml.png
 toc: false
 mathjax: false
 summary: 机器学习入门
