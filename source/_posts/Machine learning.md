@@ -90,3 +90,23 @@ $$
     f_{w,b}(x)=wx+b
 \end{array}
 $$
+
+# 代价函数公式
+
+Cost function:Squared error cost function
+
+一般对于线性回归来说，平方差代价函数用的最多：
+
+![image-20240422092046671](/Users/wangmeice/Library/Application Support/typora-user-images/image-20240422092046671.png)
+
+选择合适的w,b来minimizeJ(w,b),即使得J最小
+
+# 梯度下降
+
+Gradient Descent:用来尝试最小化任何函数
+
+![image-20240422101240658](/Users/wangmeice/Library/Application Support/typora-user-images/image-20240422101240658.png)
+
+>每次环顾360度，找到梯度下降的最大值的方向，然后前进，将会逐渐走到最小值。
+>
+>有趣的特性：在不同的起点，可能会走到不同的局部最小值。
