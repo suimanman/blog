@@ -97,7 +97,7 @@ Cost function:Squared error cost function
 
 一般对于线性回归来说，平方差代价函数用的最多：
 
-![image-20240422092046671](/Users/wangmeice/Library/Application Support/typora-user-images/image-20240422092046671.png)
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-22%2009.20.39.png" alt="image-20240422092046671" style="zoom: 33%;" />
 
 选择合适的w,b来minimizeJ(w,b),即使得J最小
 
@@ -105,8 +105,60 @@ Cost function:Squared error cost function
 
 Gradient Descent:用来尝试最小化任何函数
 
-![image-20240422101240658](/Users/wangmeice/Library/Application Support/typora-user-images/image-20240422101240658.png)
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-22%2010.12.30.png" alt="image-20240422101240658" style="zoom: 25%;" />
 
 >每次环顾360度，找到梯度下降的最大值的方向，然后前进，将会逐渐走到最小值。
 >
 >有趣的特性：在不同的起点，可能会走到不同的局部最小值。
+
+## 梯度下降实现
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-24%2010.06.32.png" style="zoom: 33%;" />
+
+>我们每次更新w和b,其中\alpha 为学习率（Learning rate):（0～1之间） 决定了你每次迈的步子的大小，也就导致下降的速度变快或慢。而后面的导数决定下降的方向，逐步更新w、b直到收敛，也就到达了局部最小值。注意我们需要同时更新w,b,见下图：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-24%2010.11.23.png" style="zoom:33%;" />
+
+> 显然，左边是正确的，右边没有同时更新，而是用了更新后的w来更新b，这显然不正确。
+
+## 梯度下降理解
+
+我们先画出损失函数J(w)-w的曲线，并在曲线上选择一个初始点，如下图所示，此时，偏导数为正数，那么乘以一个学习率还是正数，最终结果就是w会不断减小，直至导数为0，到达局部最小值。
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-25%2013.00.06.png" style="zoom:25%;" />
+
+## 学习率
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-25%2013.30.27.png" style="zoom:25%;" />
+
+如图，学习率太小会导致梯度下降速度很慢，需要更多的迭代次数。学习率太大，会导致每次梯度跨度很大，甚至超过局部最小值，从而导致损失会越来越大。
+
+# 多维特征(Multiple)
+
+通常来说，feature都有很多，并不止一个，对于多维特征的符号表示如下图所示：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20240426151023641.png" style="zoom: 25%;" />
+
+## 多元线性回归(multiple linear regression)
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-26%2015.22.22.png" alt="image-20240426152230322" style="zoom: 25%;" />
+
+## 向量化
+
+在代码实现运算时，我们直接采用Numpy的向量运算函数dot，比写循环效率要高很多（硬件适配，会将每个乘积进行同时运算，并相加，这相比于逐个计算再相加要快很多）
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-26%2015.38.37.png" style="zoom:33%;" />
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-26%2015.39.15.png" style="zoom: 50%;" />
+
+## 用于多元线性回归的梯度下降法
+
+不同于仅有一个特征的梯度下降，多元梯度下降更新每个特征Wi是需要分别更新的，对每个特征属性分别求偏导，如下图：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-26%2021.12.43.png" style="zoom: 33%;" />
+
+## 特征缩放——feature scaling
+
+当我们有多个特征时，就会发现特征之间的取值大小范围是有差异的，而当这个差异很大时，对每个特征的w的取值大小就会很明显的影响到f的大小，如下图的上面两个是特征缩放之前，可以发现损失函数的等高线图变得高瘦，这是因为房子尺寸通常来说取值很大，如果采取正常的单位的话，相比较而言，纵轴的卧室数量一般就0-10之间很小的数。因此，当对于房子尺寸来说，w如果取一个很大的值的话，会导致损失函数变化很大，所以，我们需要对数据集的数值进行合理取值，最好是一个数量级，这样得到的损失函数等高线图就会变的更加圆，从而更容易训练，以更少的训练次数达到结果。
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-26%2021.30.43.png" style="zoom: 25%;" />
