@@ -162,3 +162,81 @@ Gradient Descent:用来尝试最小化任何函数
 当我们有多个特征时，就会发现特征之间的取值大小范围是有差异的，而当这个差异很大时，对每个特征的w的取值大小就会很明显的影响到f的大小，如下图的上面两个是特征缩放之前，可以发现损失函数的等高线图变得高瘦，这是因为房子尺寸通常来说取值很大，如果采取正常的单位的话，相比较而言，纵轴的卧室数量一般就0-10之间很小的数。因此，当对于房子尺寸来说，w如果取一个很大的值的话，会导致损失函数变化很大，所以，我们需要对数据集的数值进行合理取值，最好是一个数量级，这样得到的损失函数等高线图就会变的更加圆，从而更容易训练，以更少的训练次数达到结果。
 
 <img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-26%2021.30.43.png" style="zoom: 25%;" />
+
+实现特征缩放：
+
+1. 直接除以最大值即可缩放到0-1之间
+
+2. 减去均值再除以最大减最小。
+
+   <img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2015.54.53.png" style="zoom:33%;" />
+
+3. 归一化函数z-score：正态分布
+
+​	<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2015.55.59.png" style="zoom:50%;" />
+
+## 判断梯度下降收敛
+
+通过成本函数—训练次数图来判断：成本函数值随训练次数增加逐渐减少，最后趋于持平。
+
+## 特征工程
+
+通过经验和直觉对已有的特征变换或组合来创建新的特征，这个新特征更容易做出准确的预测。
+
+# 分类
+
+## 逻辑回归-logistic regression
+
+对于一个二分类问题，如果用回归算法来分类，我们倾向于用下图这种曲线：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2017.44.28.png" style="zoom:33%;" />
+
+这种曲线相较于直线来说，能更好的反应分类结果，那我们该如何简单的得到这个曲线呢？
+
+`sigmoid function`：我们将属性z作为横轴，对于g(z)，下图中有，就能轻易得到这种曲线：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2017.48.06.png" style="zoom:33%;" />
+
+所以，我们将f和g结合：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2017.50.18.png" style="zoom:33%;" />
+
+就能很容易得到逻辑回归算法的式子，而当f结果为0.7（假设），代表分类结果为1的概率是70%，那么实际而言，假如是对于患者的肿瘤大小来推测肿瘤是良性还是恶性，就是良性的概率为70%。
+
+## 决策边界
+
+通常来说，对于像二分类这种问题，我们一般需要制定一个边界值来分类，比如我们采取的是f=0.5，那么也就是z>0的被分类为1，相反为0，那么f=0.5就是这个边界,也就是z=0。
+
+而对于z=0来说，因为z=wx+b，我们目前的任务就变成找到合适的w和b来很好的将两种分类分开，并且w x+b=0的那条线就是数据分类的分界线。
+
+举例：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2018.26.43.png" style="zoom: 25%;" />
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-28%2018.27.48.png" style="zoom: 25%;" />
+
+## 逻辑回归中的代价函数
+
+这里先给出两张图用来对比：在平方差损失函数下线性回归和逻辑回归的损失值随w,b的变化
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-29%2009.32.36.png" style="zoom: 25%;" />
+
+我们可以看到逻辑回归中出现了很多的局部最小值，显然平方差损失函数就不再适用于逻辑回归。
+
+这里我们采用单训练损失函数：对于训练集中y的值来确定损失函数用哪个。（里面L是loss损失函数，外层J是cost成本函数）
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-29%2009.45.19.png" style="zoom:25%;" />
+
+`为什么上图中的cost函数是凸函数，也就是类似于线性回归中的平方差损失函数的函数图？`
+
+在上面逻辑回归的介绍中，我们已经了解到f的输出一定是介于0～1之间，那么我们先分析y=1的情况，将-log(f)画出来：
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-29%2009.52.14.png" style="zoom:25%;" />
+
+如右图所示：紫色的线是log(f)，蓝色的线就是我们的损失函数-log(f)，因为f是介于0～1之间，我们将这个区间取出来放大，左边就是放大之后的图，因为此时是对于y=1的损失函数-f的图，可以看到当f->1时，损失函数值Loss在逐步减小直到为0，相反f->0时，损失函数趋于∞，而我们的f就是对于y值的预测，可以发现时完全贴合。
+
+同理，我们分析y=0:
+
+<img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-29%2009.58.01.png" style="zoom:25%;" />
+
+因为log里面是1-f，而对于对数来说，1-f>0====>f<1;可以得到上图中右边的图，我们截取0～1区间并放大，左边是放大之后的图。因为此时预测的是y=0，所以就恰好和y=1时相反，f=0时预测很准，因此Loss为0，相反为∞。
