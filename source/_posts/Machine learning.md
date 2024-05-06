@@ -240,3 +240,16 @@ Gradient Descent:用来尝试最小化任何函数
 <img src="https://raw.githubusercontent.com/suimanman/imgs/main/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%88%AA%E5%B1%8F2024-04-29%2009.58.01.png" style="zoom:25%;" />
 
 因为log里面是1-f，而对于对数来说，1-f>0====>f<1;可以得到上图中右边的图，我们截取0～1区间并放大，左边是放大之后的图。因为此时预测的是y=0，所以就恰好和y=1时相反，f=0时预测很准，因此Loss为0，相反为∞。
+
+## 简化逻辑回归的代价函数
+
+我们先将两种情况合并，可以很容易得到下图第一行的式子（分别带入y=0/1即可得到之前的函数），再将这个损失函数代入到成本函数中，将负号提出：
+
+`这个成本函数是经过统计学的最大似然估计得出的`
+
+<img src="/Users/wangmeice/Library/Application Support/typora-user-images/image-20240429133107692.png" alt="image-20240429133107692" style="zoom:25%;" />
+
+## 实现梯度下降
+
+
+
