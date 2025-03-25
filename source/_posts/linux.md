@@ -431,3 +431,8 @@ oldfd = open ("app_log", (O_RDWR | O_CREATE), 0644 );
 作用：调用forkO产生子进程，再从子进程中调用“Jbin/sh-e”将参数command作为完整的命令来执行。此外popen（）会建立管道传递数据给子进程（写），或者通过子进程接收数据（读）
 
 函数pclose( )    关闭由popen打开的I/O流，只在popen启动的进程结束后才返回。	
+
+## 命名管道（FIFO）
+
+
+
